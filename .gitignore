@@ -1,0 +1,11 @@
+data
+evaluation
+myenv
+.evaluation
+*.txt
+test.ipynb
+.env
+
+src/__pycache__
+
+app.py
