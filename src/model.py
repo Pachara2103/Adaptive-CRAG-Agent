@@ -5,3 +5,4 @@ load_dotenv()
 
 llama = ChatOllama(model="llama3.2", temperature=0)
 gemini = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+gemma = ChatOllama(model="gemma3", temperature=0)

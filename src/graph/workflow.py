@@ -1,10 +1,10 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
-from state import AgentState
-from tools import search
+from src.graph.state import AgentState
+from src.tools import search
 
-from nodes import retrieve_documents_node, rewrite_query_node, grade_answer_node,agent_node, grade_document_node
-from edges import should_continue, should_regenerate
+from src.graph.nodes import retrieve_documents_node, rewrite_query_node, grade_answer_node,agent_node, grade_document_node
+from src.graph.edges import should_continue, should_regenerate
 def get_workflow():
     graph = StateGraph(AgentState)
 

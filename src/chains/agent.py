@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-from model import gemini
-from tools import search
+from src.model import gemini
+from src.tools import search
 
 def get_agent_chain():
 

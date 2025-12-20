@@ -1,6 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from src.graph.state import GradeDocument, GradeAnswer
-from model import llama, gemini
+from src.model import llama, gemini
 
 def get_document_grader_chain():
 

@@ -6,6 +6,4 @@ myenv
 test.ipynb
 .env
 
-src/__pycache__
-
-app.py
+**/__pycache__
