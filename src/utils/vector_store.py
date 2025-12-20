@@ -3,7 +3,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 import streamlit as st
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 @st.cache_resource 
 def load_embedding_model():
@@ -16,8 +19,8 @@ def load_embedding_model():
 )
 embeddings = load_embedding_model()
 # initialize MongoDB python client
-uri = "mongodb+srv://user2103:bas254821@cluster0.x3bz5ht.mongodb.net/?appName=Cluster0"
 
+uri=os.getenv('MONGDB_URI')
 client = MongoClient(uri)
 
 DB_NAME = "vector_db"
