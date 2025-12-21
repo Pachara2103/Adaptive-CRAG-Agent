@@ -2,7 +2,7 @@ data
 evaluation
 myenv
 .evaluation
-*.txt
+note.txt
 test.ipynb
 .env
 
