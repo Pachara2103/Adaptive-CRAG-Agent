@@ -10,17 +10,15 @@ load_dotenv()
 model_kwargs = {"device": "cpu"}
 encode_kwargs = {"normalize_embeddings": True}
 embeddings = HuggingFaceEmbeddings(
-    model_name="BAAI/bge-m3", 
-    model_kwargs=model_kwargs, 
-    encode_kwargs=encode_kwargs
+    model_name="BAAI/bge-m3", model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
 )
 
 uri = os.getenv("MONGDB_URI")
 client = MongoClient(uri)
 
-DB_NAME = "vector_db"
-COLLECTION_NAME = "documents"
-ATLAS_VECTOR_SEARCH_INDEX_NAME = "langchain-test-index-vectorstores"
+DB_NAME = os.getenv("DB_NAME")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+ATLAS_VECTOR_SEARCH_INDEX_NAME = os.getenv("ATLAS_VECTOR_SEARCH_INDEX_NAME")
 
 MONGODB_COLLECTION = client[DB_NAME][COLLECTION_NAME]
 
