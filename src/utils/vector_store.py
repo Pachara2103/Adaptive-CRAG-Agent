@@ -13,7 +13,7 @@ embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-m3", model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
 )
 
-uri = os.getenv("MONGDB_URI")
+uri = os.getenv("MONGODB_URI")
 client = MongoClient(uri)
 
 DB_NAME = os.getenv("DB_NAME")

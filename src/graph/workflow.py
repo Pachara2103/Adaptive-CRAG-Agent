@@ -9,7 +9,7 @@ def get_workflow():
     graph = StateGraph(AgentState)
 
     # Nodes
-    graph.add_node("rewrite", rewrite_query_node)
+    graph.add_node("rewriter", rewrite_query_node)
     graph.add_node("retriever", retrieve_documents_node)
     graph.add_node("document_grader", grade_document_node)
     graph.add_node("agent", agent_node)
@@ -17,8 +17,8 @@ def get_workflow():
     graph.add_node("tools", ToolNode(tools=[search]))
 
     # Flow
-    graph.add_edge(START, "rewrite")
-    graph.add_edge("rewrite", "retriever")
+    graph.add_edge(START, "rewriter")
+    graph.add_edge("rewriter", "retriever")
     graph.add_edge("retriever", "document_grader")
     graph.add_edge("document_grader", "agent")
 

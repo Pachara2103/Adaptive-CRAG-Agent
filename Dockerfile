@@ -4,8 +4,10 @@ WORKDIR /app
 
 RUN pip install --upgrade pip
 
+# เพื่อให้ pip รู้ว่ามี torch แล้ว ไม่ต้องไปโหลดตัวใหญ่มาซ้ำ
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#  same COPY requirments.txt /app/requirements.txt
 COPY requirements.txt .
-#  same COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Docker Cache ของไม่ค่อยเปลี่ยนอยู่บนๆ

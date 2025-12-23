@@ -10,7 +10,8 @@ from src.chains.agent import get_agent_chain
 
 def rewrite_query_node(state: AgentState) -> AgentState:
     print("--- Call Rewriter ---\n")
-    question = state["question"]
+    
+    question = state['messages'][-1].content
 
     rewrite_chain = get_rewriter_chain()
     better_question = rewrite_chain.invoke({"question": question})

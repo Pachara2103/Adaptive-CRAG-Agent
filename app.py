@@ -48,7 +48,7 @@ if prompt := st.chat_input("What would you like to know?"):
             st.write("🔍 Analyzing query...")
 
             user_message = HumanMessage(content=prompt)
-            response = agent.invoke({"question": prompt, "messages": [user_message]})
+            response = agent.invoke({"messages": [user_message]})
 
             last_message = response["messages"][-1]
             content = last_message.content

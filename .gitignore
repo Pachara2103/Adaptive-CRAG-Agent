@@ -1,7 +1,6 @@
 data
-evaluation
+
 myenv
-.evaluation
 note.txt
 test.ipynb
 .env
