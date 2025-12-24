@@ -69,5 +69,5 @@ experiment_results = client.evaluate(
     data=dataset_name,
     evaluators=[correctness, groundness],
     experiment_prefix=experiment_name,
-    max_concurrency=2,
+    # max_concurrency=2,
 )
